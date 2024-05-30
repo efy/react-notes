@@ -3,6 +3,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/ThemeProvider";
+import Script from "next/script";
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -34,6 +35,15 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        {process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL &&
+          process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
+            <Script
+              src={process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL}
+              data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+              strategy="lazyOnload"
+            />
+          )
+        }
       </body>
     </html>
   );
