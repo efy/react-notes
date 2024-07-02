@@ -1,0 +1,16 @@
+# WAL
+
+A Write Ahead Log is an append only data structure prevelantly used by database systems.
+It allows a data system to serve a high volume of write requests durably without sacrificing
+performance (writing multiple disk pages).
+
+The WAL is usually written to the underlying database file (commonly a B-Tree) on startup or a regular interval.
+
+Besides durability and performance a WAL is useful as a hook for implementing logical replication (CDC) as it contains
+ordered change events.
+
+<cite>
+  <a href="https://notes.eatonphil.com/2024-07-01-a-write-ahead-log-is-not-a-universal-part-of-durability.html">
+    A write-ahead log is not a universal part of durability
+  </a>
+</cite>

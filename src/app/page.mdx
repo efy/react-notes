@@ -1,10 +1,20 @@
+import Link from "next/link";
 import { ModeToggle } from "@/components/ModeToggle";
 
-# Welcome to ReactNotes!
+<div className="flex justify-between">
+  <h1 className="text-4xl font-bold">ReactNotes</h1>
+  <ModeToggle />
+</div>
 
-Clear &amp; consise explanations of React concepts and patterns.
+This site is a peronsal mapping of descriptions, notes, explainers, diagrams and demos on things I learn about.
+The act of creating something related to a concept or subject helps me learn better. Individual pages are generally
+revisited and updated when I learn something new about a topic. Content on this website may or may not be useful to anyone.
 
-The site is currently being developed.
+<h2 className="text-xl font-bold">Pages</h2>
 
-For now you can change the theme <ModeToggle/>
+<h3 className="text-lg">Database Concepts</h3>
+<Link href="/WAL">WAL</Link>
+<Link href="/MVCC">MVCC</Link>
 
+<h3 className="text-lg">Productivity</h3>
+<Link href="/SMART">SMART</Link>
